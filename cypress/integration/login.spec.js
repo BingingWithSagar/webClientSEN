@@ -23,6 +23,16 @@ describe('Test For Login Page and Forgot Password', function() {
             expect(req).to.equal("Please enter a valid email");})
             cy.url().should('include', '/login')
         });
+        // it('test login invalid email with space in the end',function(){
+        //     cy.get('input[name="email"]').type('sagmail@gmail.com ').should('have.value', 'sagmail@gmail.com ')
+        //     cy.get('input[name="password"]').type('retro').should('have.value', 'retro')
+        //     cy.get('.button.is-success').click()
+        //     cy.wait('@login')
+        //     cy.get('.Toastify__toast-body').invoke('text')
+        //     .then((text)=>{
+        //     const toastText = text;
+        //     expect(toastText).to.equal("either email or password is wrong");})
+        // });
         it('test login email not verified',function(){
             cy.get('input[name="email"]').type('sagar@gmail.com').should('have.value', 'sagar@gmail.com')
             cy.get('input[name="password"]').type('123456').should('have.value', '123456')
